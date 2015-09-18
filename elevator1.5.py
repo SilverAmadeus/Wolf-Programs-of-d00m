@@ -36,7 +36,7 @@ class Elevator ():
             print ("Dejo al douche en el piso ", self.current_Floor)
             time.sleep(.5)
             # Los sleep son solo para ver como se comportan los hilos sin que flasheen de un jalón en la pantalla LOL
-            self.time += random.random()
+            self.time += random.random() * 1.5
 
 class Student ():
     def __init__(self):
@@ -44,9 +44,10 @@ class Student ():
         self.Floor_request = 0
         self.Floor_destination = 0
         self.time = 0
+        self.Guy_cap = 0
     def run (self):
         global mut, q1, q2
-        while (time.clock() < 10):
+        while (time.clock() and self.Guy_cap < 10):
         # Mientras no hayan pasado 10 segundos o el tiempo que tengo sea menor a 10 hará la llamada a nuevos tipos.
             v = random.randint(1, 5)
             v2 = random.randint(1, 5)
@@ -59,10 +60,11 @@ class Student ():
             self.Floor_request = v2
             print ("Soy el tipo ", self.Guy_number ," estoy en el piso ", self.Floor_request, "quiero ir a el piso ", self.Floor_destination)
             self.Guy_number += 1
-            time.sleep (3)
+            self.Guy_cap += 1
+            #time.sleep (3)
             #mut.acquire ()
             #print ("I should finish first")
-            self.time += random.random() * 2
+            self.time += random.random()
             # es * 2 para que le dé tiempo al elevador de repartir a los tipos que tiene adentro
 
 q1 = Queue.Queue(5)
