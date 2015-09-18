@@ -72,7 +72,10 @@ q2 = Queue.Queue(5)
 
 e = Elevator ()
 s = Student()
+s2 = Student()
 et = threading.Thread(target=e.run, args=()) # Elevator thread
 st = threading.Thread(target=s.run, args=()) #Student Thread
+st2 = threading.Thread(target=s2.run, args=()) # Student 2 Thread
 st.start ()
+st2.start()
 et.start ()
