@@ -28,13 +28,12 @@ class Elevator ():
         while (time.clock() < 10):
             print ("Estoy en el piso ", self.current_Floor)
             time.sleep(.5)
-            self.destinations.append(q1.get())
-            self.nextfloor = self.destinations.pop()
+            self.nextfloor = q2.get()
             print("Voy por el douche al piso ", self.nextfloor )
+            self.destinations.append(self.nextfloor)
             time.sleep(.5)
-            self.current_Floor = self.nextfloor
+            self.current_Floor = q1.get()
             print ("Dejo al douche en el piso ", self.current_Floor)
-            q2.put(self.current_Floor)
             time.sleep(.5)
             # Los sleep son solo para ver como se comportan los hilos sin que flasheen de un jalón en la pantalla LOL
             self.time += random.random()
@@ -50,8 +49,14 @@ class Student ():
         while (time.clock() < 10):
         # Mientras no hayan pasado 10 segundos o el tiempo que tengo sea menor a 10 hará la llamada a nuevos tipos.
             v = random.randint(1, 5)
+            v2 = random.randint(1, 5)
+            while (v == v2):
+                v = random.randint(1, 5)
+                v2 = random.randint(1, 5)
             q1.put(v)
+            q2.put(v2)
             self.Floor_destination = v
+            self.Floor_request = v2
             print ("Soy el tipo ", self.Guy_number ," estoy en el piso ", self.Floor_request, "quiero ir a el piso ", self.Floor_destination)
             self.Guy_number += 1
             time.sleep (3)
@@ -62,7 +67,6 @@ class Student ():
 
 q1 = Queue.Queue(5)
 q2 = Queue.Queue(5)
-
 
 e = Elevator ()
 s = Student()
