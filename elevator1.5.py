@@ -3,7 +3,7 @@ __author__ = 'Ivan'
 import threading, time, random
 
 
-# Noté que usas python 2.7~ lo de abajo es para que los dos podamos manejar el programa sin problemas de compatibilidad
+# Note que usas python 2.7 lo de abajo es para que los dos podamos manejar el programa sin problemas de compatibilidad
 # Como sidenote uso python 3.4. :P
 try:
     import Queue
@@ -35,7 +35,7 @@ class Elevator ():
             self.current_Floor = q1.get()
             print ("Dejo al douche en el piso ", self.current_Floor)
             time.sleep(.5)
-            # Los sleep son solo para ver como se comportan los hilos sin que flasheen de un jalón en la pantalla LOL
+            # Los sleep son solo para ver como se comportan los hilos sin que flasheen de un jalon en la pantalla LOL
             self.time += random.random() * 1.5
 
 class Student ():
@@ -48,7 +48,7 @@ class Student ():
     def run (self):
         global mut, q1, q2
         while (time.clock() and self.Guy_cap < 10):
-        # Mientras no hayan pasado 10 segundos o el tiempo que tengo sea menor a 10 hará la llamada a nuevos tipos.
+        # Mientras no hayan pasado 10 segundos o el tiempo que tengo sea menor a 10 hara la llamada a nuevos tipos.
             v = random.randint(1, 5)
             v2 = random.randint(1, 5)
             while (v == v2):
@@ -65,7 +65,7 @@ class Student ():
             #mut.acquire ()
             #print ("I should finish first")
             self.time += random.random()
-            # es * 2 para que le dé tiempo al elevador de repartir a los tipos que tiene adentro
+            # es * 2 para que le de tiempo al elevador de repartir a los tipos que tiene adentro
 
 q1 = Queue.Queue(5)
 q2 = Queue.Queue(5)
