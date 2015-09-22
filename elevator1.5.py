@@ -1,4 +1,5 @@
-__author__ = 'Ivan'
+__autores__ = 'Raphael Iván Moreno Tagle' \
+              'Rodriguez García Alan Julian'
 
 import threading, time, random
 
@@ -23,17 +24,17 @@ class Elevator ():
         self.current_Floor = 0
         self.time = 0
     def run (self):
-        global mut, q1, q2   # q1 = requests, q2 = destinations
+        global mut, q1, q2  # q1 = requests, q2 = destinations
         #self.requests.append(q1.get())
         while (time.clock() < 10):
             print ("Estoy en el piso ", self.current_Floor)
             time.sleep(.5)
             self.nextfloor = q2.get()
-            print("Voy por el douche al piso ", self.nextfloor )
+            print("Voy por el estudiante al piso ", self.nextfloor )
             self.destinations.append(self.nextfloor)
             time.sleep(.5)
             self.current_Floor = q1.get()
-            print ("Dejo al douche en el piso ", self.current_Floor)
+            print ("Dejo al estudiante en el piso ", self.current_Floor)
             time.sleep(.5)
             # Los sleep son solo para ver como se comportan los hilos sin que flasheen de un jalon en la pantalla LOL
             self.time += random.random() * 1.5
@@ -58,7 +59,7 @@ class Student ():
             q2.put(v2)
             self.Floor_destination = v
             self.Floor_request = v2
-            print ("Soy el tipo ", self.Guy_number ," estoy en el piso ", self.Floor_request, "quiero ir a el piso ", self.Floor_destination)
+            print ("Soy el estudiante ", self.Guy_number ," estoy en el piso ", self.Floor_request, "quiero ir a el piso ", self.Floor_destination)
             self.Guy_number += 1
             self.Guy_cap += 1
             #time.sleep (3)

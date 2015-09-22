@@ -42,11 +42,13 @@ class Student():
         while True :
 
             self.preguntas = random.randint(1, 3)
-            print("QUESTION TIME MOFO!")
+            print("Soy el estudiante ", id, "")
             q2.put(self.id)
-            if (q1.full is True):
+            while (q1.full is True):
                 print("Estoy esperando...")
-                
+            print("Hago mi pregunta")
+            time.sleep(1.5)
+
             q1.put(q2.get())
             id += 1
 
