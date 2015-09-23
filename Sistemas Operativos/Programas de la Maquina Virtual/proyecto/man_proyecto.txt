@@ -1,0 +1,57 @@
+Manual "proyecto.c"
+
+Realiza las siguientes busquedas:
+
+1.- Por tipo de archivo: 
+[ejecutable] [ruta] a [parametro] [ejecuta] [comando] [parametro]
+	Fichero ordinario         -
+	Directorio                d
+	Dispositio modo caracter  c
+	Dispositivo modo bloque   b 
+	Tuberia con nombre        p
+	Enlace simbolico          l 
+	Conector(socket)          s
+Ejemplos:
+./a.out / a s 
+./a.out / a s ejecuta ls -l
+
+
+2.- Por nombre: 
+[ejecutable]  [ruta] n [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out / n man 
+./a.out / n dev ejecuta ls
+
+
+3.- Ultimo Acceso: 
+[ejecutable] [ruta] at ["mes dd"] [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out / at "Dec 19"
+./a.out / at "Jul 19" ejecuta ls 
+
+
+4.- Ultima modificacion: 
+[ejecutable] [ruta] mt ["mes dd"] [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out / mt "Jul 19"
+./a.out / mt "Jul 19" ejecuta stat -x
+
+
+5.- Ultimo Cambio: 
+[ejecutable] [ruta] ct ["mes dd"] [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out ct /usr "Feb 15" ejecuta stat -x
+
+6.- Por permisos:
+[ejecutable] [ruta] p [-_-_-_-_-] [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out / p rwxr-xr-x 
+./a.out / p r-sr-xr-x ejecuta stat -x
+./a.out / p r-xr-sr-x ejecuta stat -x
+./a.out / p rwxrwxrwt ejecuta stat -x
+
+7.- Por tamaño:
+[ejecutable] [ruta] t [tam_min] [tam_max] [ejecuta] [comando] [parametro]
+Ejemplos:
+./a.out / t 10 12
+./a.out / t 10 12 ejecuta stat -x

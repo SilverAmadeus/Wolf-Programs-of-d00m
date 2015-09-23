@@ -1,0 +1,117 @@
+SiSoftware Sandra
+
+Para mostrar
+Conexión : Computadora Local
+
+Aritmética del procesador
+En proceso de análisis...
+Resultado combinado : 20.04GOPS
+Identidad de resultado : AMD Phenom(tm) II X2 550 Processor (2C 3.12GHz, 2GHz IMC, 2x 512kB L2, 6MB L3)
+Velocidad : 3121MHz
+Capacidad : 2Unidad(es)
+Energía : 89.10W
+Finalizado exitosamente : Sí
+
+Multimedia del procesador
+En proceso de análisis...
+Resultado combinado : 32.41MPixel/s
+Identidad de resultado : AMD Phenom(tm) II X2 550 Processor (2C 3.12GHz, 2GHz IMC, 2x 512kB L2, 6MB L3)
+Velocidad : 3121MHz
+Capacidad : 2Unidad(es)
+Energía : 89.10W
+Finalizado exitosamente : Sí
+
+Criptografía
+En proceso de análisis...
+Resultado combinado : 0.252GB/s
+Identidad de resultado : AMD Phenom(tm) II X2 550 Processor (2C 3.12GHz, 2GHz IMC, 2x 512kB L2, 6MB L3)
+Velocidad : 3121MHz
+Capacidad : 2Unidad(es)
+Energía : 89.10W
+Finalizado exitosamente : Sí
+
+.NET aritmético
+En proceso de análisis...
+Resultado combinado : 5.31GOPS
+Identidad de resultado : AMD Phenom(tm) II X2 550 Processor (2C 3.12GHz, 2GHz IMC, 2x 512kB L2, 6MB L3)
+Velocidad : 3121MHz
+Capacidad : 2Unidad(es)
+Energía : 89.10W
+Finalizado exitosamente : Sí
+
+.NET Multimedia
+En proceso de análisis...
+Resultado combinado : 6.76MPixel/s
+Identidad de resultado : AMD Phenom(tm) II X2 550 Processor (2C 3.12GHz, 2GHz IMC, 2x 512kB L2, 6MB L3)
+Velocidad : 3121MHz
+Capacidad : 2Unidad(es)
+Energía : 89.10W
+Finalizado exitosamente : Sí
+
+Ancho de banda de memoria
+En proceso de análisis...
+Resultado combinado : 9.431GB/s
+Identidad de resultado : ATI (AMD) RD890 PCI to PCI bridge (external gfx0 port B); 2x 2GB Kingston 99U5474-013A00LF DIMM DDR3 (1.34GHz 128-bit) PC3-10700 (9-9-9-24 4-33-9-5)
+Velocidad : 1340MHz
+Capacidad : 4096MB
+Energía : 42.47W
+Finalizado exitosamente : Sí
+
+La latencia de la memoria
+En proceso de análisis...
+Resultado combinado : 63.1ns
+Identidad de resultado : ATI (AMD) RD890 PCI to PCI bridge (external gfx0 port B); 2x 2GB Kingston 99U5474-013A00LF DIMM DDR3 (1.34GHz 128-bit) PC3-10700 (9-9-9-24 4-33-9-5)
+Velocidad : 1340MHz
+Capacidad : 4096MB
+Energía : 42.47W
+Finalizado exitosamente : Sí
+
+Ancho de banda de los Sistemas de Archivo
+En proceso de análisis...
+Resultado combinado : 60.207MB/s
+Identidad de resultado : Seagate ST3320613AS (320.1GB, SATA300, 3.5", 7200rpm, 16MB Caché)
+Velocidad : 7200rpm
+Capacidad : 320.07GB
+Finalizado exitosamente : Sí
+
+I/O de los Sistemas de Archivo
+En proceso de análisis...
+Resultado combinado : 146.1IOPS
+Identidad de resultado : Seagate ST3320613AS (320.1GB, SATA300, 3.5", 7200rpm, 16MB Caché)
+Velocidad : 3000Mbps
+Capacidad : 320072MB
+Finalizado exitosamente : Sí
+
+Procesamiento GP (GPU/CPU/APU)
+En proceso de análisis...
+Resultado combinado : 71.58MPixel/s
+Identidad de resultado : NVIDIA GeForce GT 220  (48SP 6C 1.36GHz, 1GB DDR2 800MHz 128-bit) (OpenCL)
+Velocidad : 1360MHz
+Capacidad : 6Unidad(es)
+Energía : 58.00W
+Finalizado exitosamente : Sí
+
+Criptografía GP (GPU/CPU/APU)
+En proceso de análisis...
+Resultado combinado : 0.565GB/s
+Identidad de resultado : NVIDIA GeForce GT 220  (48SP 6C 1.36GHz, 1GB DDR2 800MHz 128-bit) (OpenCL)
+Velocidad : 1360MHz
+Capacidad : 6Unidad(es)
+Energía : 58.00W
+Finalizado exitosamente : Sí
+
+Ancho de banda de memoria GP (GPU/CPU/APU)
+En proceso de análisis...
+Resultado combinado : 7.365GB/s
+Identidad de resultado : NVIDIA GeForce GT 220  (48SP 6C 1.36GHz, 1GB DDR2 800MHz 128-bit) (OpenCL)
+Velocidad : 800MHz
+Capacidad : 1024MB
+Energía : 58.00W
+Finalizado exitosamente : Sí
+
+Puntuaje general
+Resultado combinado : 1.56kPT
+Interpretación de los resultados : Los valores de índices más altos son mejores.
+Multiplicadores de resultados en sistema decimal (base 10) : 1GPT = 1000MPT, 1MPT = 1000kPT, 1kPT = 1000PT, etc.
+Identidad de resultado : GigaByte GA-970A-D3 (AMD Phenom II X2 550 Processor; ATI RD890 PCI to PCI bridge; 2x 2GB Kingston 99U5474-013A00LF ; Seagate ST3320613AS; NVIDIA GeForce GT 220)
+Finalizado exitosamente : Sí
