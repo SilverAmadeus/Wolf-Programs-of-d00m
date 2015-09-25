@@ -1,6 +1,6 @@
 __author__ = 'Ivan'
 import random, time
-class Process1(object):
+class Process3(object):
     def __init__(self):
         self.max_size = 0
         self.memory = []
@@ -9,32 +9,31 @@ class Process1(object):
         self.process = "Trabajando"
 
     def initialize(self):
-        print("Este es el proceso 1")
-        #end='\r'
+        print("Este es el proceso 3")
 
         return 0
     def tasks(self):
         self.max_size = len(self.memory)
         while self.status is True:
             i = random.randint(0, 99)
-            print("Proceso 1 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...",  end='\r')
+            print("\nProceso 3 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...",  end='\r')
             time.sleep(2)
-            if len(self.memory) < 5:
-                self.probability = 80
-            elif len(self.memory) == 17:
-                self.probability = 30
+            if len(self.memory) == 1:
+                self.probability = 98
+            elif len(self.memory) == 4:
+                self.probability = 15
 
             if (i > self.probability):
-                print("Proceso 1: Eliminando...", end='\r')
+                print("\nProceso 3: Eliminando...", end='\r')
                 time.sleep(2)
                 self.memory.pop()
-                print("Proceso 1: Tamaño de bloque ", len(self.memory), end='\r')
+                print("\nProceso 3: Tamaño de bloque ", len(self.memory), end='\r')
                 if not self.memory:
-                    print("Proceso 1 sin memoria", end='\r')
+                    print("\nProceso 3 sin memoria", end='\r')
                     self.status = False
             else:
-                if len(self.memory) == 20:
-                    print("Proceso 1: Memoria maxima",  end='\r')
+                if len(self.memory) == 5:
+                    print("\nProceso 3: Memoria maxima",  end='\r')
                 else:
                     self.memory.append(0)
 
