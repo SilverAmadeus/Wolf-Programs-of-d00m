@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="140a468a-98df-4a69-925f-817bcc2cd511" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU.py" afterPath="$PROJECT_DIR$/CPU.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_1.py" afterPath="$PROJECT_DIR$/Proceso_1.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_2.py" afterPath="$PROJECT_DIR$/Proceso_2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_3.py" afterPath="$PROJECT_DIR$/Proceso_3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Proyecto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +27,20 @@
       <file leaf-file-name="CPU.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CPU.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="9.893617">
-              <caret line="186" column="43" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
+            <state vertical-scroll-proportion="-10.358381">
+              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gui_MMU.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gui_MMU.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -52,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/Proceso_1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -95,8 +105,9 @@
       <list>
         <option value="$PROJECT_DIR$/Proceso_2.py" />
         <option value="$PROJECT_DIR$/Proceso_3.py" />
-        <option value="$PROJECT_DIR$/Proceso_1.py" />
         <option value="$PROJECT_DIR$/../GUI_Project.py" />
+        <option value="$PROJECT_DIR$/Proceso_1.py" />
+        <option value="$PROJECT_DIR$/../gui_MMU.py" />
         <option value="$PROJECT_DIR$/CPU.py" />
       </list>
     </option>
@@ -157,7 +168,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GUI_Project.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gui_MMU.py" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RunManager" selected="Python.CPU">
@@ -208,6 +219,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Proyecto" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../GUI_Project.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="gui_MMU" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Proyecto" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../gui_MMU.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -334,16 +362,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
       <item index="1" class="java.lang.String" itemvalue="Python.Proceso_1" />
       <item index="2" class="java.lang.String" itemvalue="Python.GUI_Project" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui_MMU" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
-        <item index="1" class="java.lang.String" itemvalue="Python.GUI_Project" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gui_MMU" />
         <item index="2" class="java.lang.String" itemvalue="Python.Proceso_1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.GUI_Project" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +401,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4854962" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38778627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -384,6 +414,14 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -394,18 +432,26 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Proceso_1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Proceso_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proceso_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proceso_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -420,19 +466,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Proceso_3.py">
+    <entry file="file://$PROJECT_DIR$/../gui_MMU.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPU.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="9.893617">
-          <caret line="186" column="43" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
-          <folding />
+        <state vertical-scroll-proportion="-10.358381">
+          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
