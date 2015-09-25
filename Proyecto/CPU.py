@@ -1,5 +1,7 @@
-__author__ = 'Ivan'
+__author__ = 'Big Boss'
 import threading, random, time
+from tkinter import *
+gui = Tk()
 
 # Cambiar el numero del proceso 3 a 4 ya que usan la misma clase pero son diferentes instancias
 
@@ -11,7 +13,7 @@ class CPU(object):
 
     def initialize(self):
         global CPU_memory
-        print("Iniciando repartición de memoria")
+        print("Iniciando repartición de memoria \nMemoria inicial para los procesos .")
         p1.memory = self.memory[:int((len(self.memory)) * .4)] #Tomando los bloques del cpu para proceso 1
         self.memory = [0] * (self.max_size - len(p1.memory))
 
@@ -51,12 +53,21 @@ class Process1(CPU):
         self.probability = 0
         self.process = "Trabajando"
         self.id = 1
+        self.console = False
 
         super(Process1, self).__init__() # Constructor para la super-clase
 
-    def initialize(self):
+    def initialize_p1(self):
         print("Este es el proceso 1")
         #end='\r'
+
+    def console_stat(self):
+        if self.console is True:
+            self.console = False
+            print(self.console)
+        else:
+            self.console = True
+            print(self.console)
 
         return 0
     def tasks(self):
@@ -64,7 +75,7 @@ class Process1(CPU):
         self.max_size = len(self.memory)
         while self.status is True:
             i = random.randint(0, 99)
-            print("Proceso 1 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...")
+            if self.console is True: print("Proceso 1 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...", end='\r')
             time.sleep(2)
             if len(self.memory) < 5:
                 self.probability = 80
@@ -72,23 +83,23 @@ class Process1(CPU):
                 self.probability = 30
 
             if (i > self.probability):
-                print("Proceso 1: Eliminando...")
+                if self.console is True: print("Proceso 1: Eliminando...", end ='\r')
+                #print("Proceso 1: Tamaño de bloque ", len(self.memory), end='\r')
                 time.sleep(2)
                 self.memory.pop()
-                print("Proceso 1: Tamaño de bloque ", len(self.memory))
                 if not self.memory:
-                    print("\nProceso 1 sin memoria, solicitando memoria a CPU")
+                    if self.console is True: print("Proceso 1 sin memoria, solicitando memoria a CPU", end='\r')
                     time.sleep(2)
                     if CPU.assign(self, self.memory) is False:
-                        print("Proceso 1 sin memoria suficiente: TERMINANDO")
+                        if self.console is True: print("Proceso 1 sin memoria suficiente: TERMINANDO", end='\r')
                         time.sleep(2)
                         self.status = False
                     else:
-                        print("Memoria extra asiganada a Proceso 2 ")
+                        if self.console is True: print("Memoria extra asiganada a Proceso 1 ", end='\r')
                         time.sleep(2)
             else:
                 if len(self.memory) == 20:
-                    print("\nProceso 1: TERMINADO")
+                    print("\nProceso 1: TERMINADO", end='\r')
                     time.sleep(2)
                     self.status = False
                 else:
@@ -104,10 +115,17 @@ class Process2(CPU):
         self.probability = 0
         self.process = "Trabajando"
         self.id = 2
+        self.console = False
         super(Process2, self).__init__()
 
-    def initialize(self):
+    def initialize_p2(self):
         print("Este es el proceso 2")
+
+    def console_stat(self):
+        if self.console is True:
+            self.console = False
+        else:
+            self.console = True
 
         return 0
     def tasks(self):
@@ -115,7 +133,7 @@ class Process2(CPU):
         self.max_size = len(self.memory)
         while self.status is True:
             i = random.randint(0, 99)
-            print("\nProceso 2 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...")
+            if self.console is True: print("Proceso 2 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...", end='\r')
             time.sleep(2)
             if len(self.memory) == 3:
                 self.probability = 95
@@ -123,27 +141,28 @@ class Process2(CPU):
                 self.probability = 25
 
             if (i > self.probability):
-                print("\nProceso 2: Eliminando...")
+                if self.console is True: print("Proceso 2: Eliminando...", end='\r')
                 time.sleep(2)
                 self.memory.pop()
-                print("\nProceso 2: Tamaño de bloque ", len(self.memory))
+                #print("Proceso 2: Tamaño de bloque ", len(self.memory))
                 if not self.memory:
-                    print("\nProceso 2 sin memoria, solicitando memoria a CPU")
+                    if self.console is True: print("Proceso 2 sin memoria, solicitando memoria a CPU", end='\r')
                     time.sleep(2)
                     if CPU.assign(self, self.memory) is False:
-                        print("Proceso 2 sin memoria suficiente: TERMINANDO")
+                        if self.console is True: print("Proceso 2 sin memoria suficiente: TERMINANDO", end='\r')
                         time.sleep(2)
                         self.status = False
                     else:
-                        print("Memoria extra asiganada a Proceso 2 ")
+                        if self.console is True: print("Memoria extra asiganada a Proceso 2 ", end='\r')
                         time.sleep(2)
             else:
                 if len(self.memory) == 10:
-                    print("\nProceso 2: TERMINADO")
+                    print("\nProceso 2: TERMINADO", end='\r')
                     time.sleep(2)
                     self.status = False
                 else:
                     self.memory.append(0)
+
         return 0
 
 class Process3(CPU):
@@ -154,18 +173,24 @@ class Process3(CPU):
         self.probability = 0
         self.process = "Trabajando"
         self.id = 3
+        self.console = False
         super(Process3, self).__init__()
 
-    def initialize(self):
+    def initialize_p3(self):
         print("Este es el proceso 3")
 
-        return 0
+    def console_stat(self):
+        if self.console is True:
+            self.console = False
+        else:
+            self.console = True
+
     def tasks(self):
         global CPU_memory
         self.max_size = len(self.memory)
         while self.status is True:
             i = random.randint(0, 99)
-            print("\nProceso 3 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...")
+            if self.console is True: print("Proceso 3 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...", end='\r')
             time.sleep(2)
             if len(self.memory) == 1:
                 self.probability = 98
@@ -173,24 +198,24 @@ class Process3(CPU):
                 self.probability = 15
 
             if (i > self.probability):
-                print("\nProceso 3: Eliminando...")
+                if self.console is True: print("Proceso 3: Eliminando...", end='\r')
                 time.sleep(2)
                 self.memory.pop()
-                print("\nProceso 3: Tamaño de bloque ", len(self.memory))
+                if self.console is True: print("Proceso 3: Tamaño de bloque ", len(self.memory), end='\r')
                 if not self.memory:
-                    print("\nProceso 3 sin memoria, solicitando memoria a CPU")
+                    if self.console is True: print("Proceso 3 sin memoria, solicitando memoria a CPU", end='\r')
                     # print(CPU_memory)
                     time.sleep(2)
                     if CPU.assign(self, self.memory) is False:
-                        print("Proceso 3 sin memoria suficiente: TERMINANDO")
+                        if self.console is True: print("\nProceso 3 sin memoria suficiente: TERMINANDO")
                         time.sleep(2)
                         self.status = False
                     else:
-                        print("Memoria extra asiganada a Proceso 3 ")
+                        if self.console is True: print("Memoria extra asiganada a Proceso 3 ", end='\r')
                         time.sleep(2)
             else:
                 if len(self.memory) == 5:
-                    print("\nProceso 3: TERMINADO")
+                    if self.console is True: print("\nProceso 3: TERMINADO")
                     time.sleep(2)
                     self.status = False
                 else:
@@ -209,6 +234,7 @@ p2 = Process2()
 p3 = Process3()
 p4 = Process3()
 cpu = CPU()
+# Chequeo inicial de estados
 print("Memoria de CPU inicial " + str(len(cpu.memory)))
 cpu.initialize()
 print("Memoria de CPU: " + str(len(cpu.memory)))
@@ -216,11 +242,20 @@ print("Memoria de Proceso 1: " +str(len(p1.memory)))
 print("Memoria de Proceso 2: " +str(len(p2.memory)))
 print("Memoria de Proceso 3: " +str(len(p3.memory)))
 print("Memoria de Proceso 4: " +str(len(p4.memory)))
+print("\n")
 p1t = threading.Thread(target=p1.tasks, args=())
-p2t = threading.Thread(target=p2.tasks(), args=()) # Thread de Process 1
-p3t = threading.Thread(target=p3.tasks(), args=())
-p4t = threading.Thread(target=p4.tasks(), args=())
+p2t = threading.Thread(target=p2.tasks, args=()) # Thread de Process 1
+p3t = threading.Thread(target=p3.tasks, args=())
+#p4t = threading.Thread(target=p4.tasks(), args=())
 p1t.start()
 p2t.start()
 p3t.start()
-p4t.start()
+#p4t.start()
+buttonPROCESS1 = Button (gui, text="Process 1",command = p1.console_stat).place(x=50,y=50)
+# gui.quit se sustituye por la funcion que deseemos
+buttonPROCESS2 = Button (gui, text="Process 2",command = p2.console_stat).place(x=50,y=80)
+buttonPROCESS3 = Button (gui, text="Process 3",command = p3.console_stat).place(x=50,y=110)
+
+gui.geometry("200x200")#dimensiones ancho x alto
+gui.title("Memory Management Unit")
+gui.mainloop()
