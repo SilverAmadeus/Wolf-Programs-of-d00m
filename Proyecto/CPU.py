@@ -319,6 +319,8 @@ p2t.start()
 p3t.start()
 #p4t.start()
 cput.start()
+char = PhotoImage(file="char.gif")
+fondo = Label (gui,image=char).place(x=100,y=10)
 buttonPROCESS1 = Button (gui, text="Process 1",command = p1.console_stat).place(x=50,y=50)
 # gui.quit se sustituye por la funcion que deseemos
 buttonPROCESS2 = Button (gui, text="Process 2",command = p2.console_stat).place(x=50,y=80)
@@ -328,6 +330,6 @@ buttonPROCESSP1 = Button (gui, text="Memoria en Proceso 1",command = cpu.console
 buttonPROCESSP2 = Button (gui, text="Memoria en Proceso 2",command = cpu.console_stat_mem2).place(x=400,y=130)
 buttonPROCESSP3 = Button (gui, text="Memoria en Proceso 3",command = cpu.console_stat_mem3).place(x=400,y=160)
 
-gui.geometry("600x200")#dimensiones ancho x alto
+gui.geometry("600x250")#dimensiones ancho x alto
 gui.title("Memory Management Unit")
 gui.mainloop()
