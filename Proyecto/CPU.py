@@ -120,7 +120,7 @@ class Process1(CPU):
         self.max_size = 0
         self.memory = []
         self.status = True
-        self.probability = 0
+        self.probability = -1
         self.insufficient_memory = False
         self.id = 1
         self.console = False
@@ -209,7 +209,7 @@ class Process2(CPU):
         self.max_size = 0
         self.memory = []
         self.status = True
-        self.probability = 0
+        self.probability = -1
         self.insufficient_memory = False
         self.id = 2
         self.console = False
@@ -285,7 +285,7 @@ class Process3(CPU):
         self.max_size = 0
         self.memory = []
         self.status = True
-        self.probability = 0
+        self.probability = -1
         self.insufficient_memory = False
         self.id = 3
         self.console = False
@@ -353,7 +353,7 @@ class Process3(CPU):
                     if self.console is True: print("Proceso 3: TERMINADO: Memoria insuficiente en CPU", end='\r')
                     time.sleep(1.5)
                 else:
-                    if self.console is True: print("Proceso 3: TERMINDADO", end='\r')
+                    if self.console is True: print("Proceso 3: TERMINADO", end='\r')
                     time.sleep(1.5)
 
         return 0
@@ -389,7 +389,7 @@ cput.start()
 
 #Creando los objetos de Boton y ventando
 char = tk.PhotoImage(file="char.gif")
-fondo = tk.Label (gui,image=char).place(x=100,y=10)
+fondo = tk.Label (gui,image=char).place(x=50,y=-20)
 
 buttonPROCESSCPU = tk.Button(gui, text="Memoria en CPU [OFF]",command = cpu.console_stat_cpu)
 
@@ -411,6 +411,6 @@ buttonPROCESSP1.place(x=400,y=100)
 buttonPROCESSP2.place(x=400,y=130)
 buttonPROCESSP3.place(x=400,y=160)
 
-gui.geometry("600x250")#dimensiones ancho x alto
+gui.geometry("650x300")#dimensiones ancho x alto
 gui.title("Memory Management Unit")
 gui.mainloop()
