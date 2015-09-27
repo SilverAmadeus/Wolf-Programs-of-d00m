@@ -1,4 +1,5 @@
-__author__ = 'Big Boss'
+__authors__ = 'Moreno Tagle Raphael Ivan' \
+              'Rodriguez Garcia Alan Julian'
 import threading, random, time
 import tkinter as tk
 gui = tk.Tk()
@@ -14,6 +15,8 @@ class CPU(object):
         self.console_mem3 = False
         self.status = True
 
+    # Función que define si se muentra o no en consola los estados de las memorias que ocupan los procesos
+    # Actualiza el estado de los botones
     def console_stat_cpu(self):
         if self.console_cpu is True:
             self.console_cpu = False
@@ -46,6 +49,7 @@ class CPU(object):
             self.console_mem3 = True
             buttonPROCESSP3["text"] = "Memoria en Proceso 3 [ON]"
 
+    # Se realiza una particion de tamano diferente a cada uno de los procesos
     def initialize(self):
         global CPU_memory
         print("\t\t\tIniciando repartición de memoria \n\t\t\tMemoria inicial para los procesos .")
@@ -58,13 +62,12 @@ class CPU(object):
         p3.memory = self.memory[:int((len(self.memory)) * .35)] #Tomando los bloques del cpu para proceso 3
         self.memory = [0] * (len(self.memory)- len(p3.memory))
 
-        #p4.memory = p3.memory #Tomando los bloques del cpu para proceso 3
-        #self.memory = [0] * (len(self.memory)- len(p4.memory))
         CPU_memory = self.memory
 
-        # newList = originalList[int(len(originalList) * .05) : int(len(originalList) * .95)]
         return 0
 
+    # Asigna mas memoria en casa de que alguno de los procesos la llege a requerir, si al CPU no le es posible
+    # asignar mas memoria le hace saber al proceso para que termine se ejecucion
     def assign(self, process_memory):
         global CPU_memory
         if CPU_memory:
@@ -77,7 +80,10 @@ class CPU(object):
             time.sleep(2)
             return False
 
-    def percentages(self): # Calcula porcentaje de uso de procesos y de CPU
+    # Calcula el porcentaje de memoria libre y en uso del CPU y los diferentes procesos
+    # Esta funcion la lleva acabo el hilo cput, botones seleccionan que va a imprimir el hilos dependiendo de
+    # Los estados de las variables de la clase CPU
+    def percentages(self):
         global CPU_memory, Mem_P1, Mem_Max_P1, Mem_P2, Mem_Max_P2, Mem_P3, Mem_Max_P3
         while self.status is True:
             increase = float(len(CPU_memory)) - float(self.max_size)
@@ -119,11 +125,10 @@ class Process1(CPU):
         self.id = 1
         self.console = False
 
-        super(Process1, self).__init__() # Constructor para la super-clase
+        # Constructor para la super-clase CPU, todos los procesos heredan de ella
+        super(Process1, self).__init__()
 
-    def initialize_p1(self):
-        print("Este es el proceso 1")
-
+    #  Actualiza boton y estado de impresion en consola
     def console_stat(self):
         if self.console is True:
             self.console = False
@@ -133,17 +138,24 @@ class Process1(CPU):
             buttonPROCESS1["text"] = "Proceso 1 [ON]"
 
     def tasks(self):
+        #Variables globales que llevan los valores de la memoria actual y la maxima del CPU y cada uno de los procesos
         global CPU_memory, Mem_P1, Mem_Max_P1, Mem_P2, Mem_Max_P2, Mem_P3, Mem_Max_P3
         self.max_size = len(self.memory)
         Mem_Max_P1 = self.max_size
 
         while True:
+            # Si el proceso sigue vivo realizara operaciones para eliminar o agregar bloques de memoria,
+            # el si borra o agrega bloques esta definido por una porcentaje de probabilidad dado que cambia
+            # dependiendo de cuantos bloques que tenga la probabilidad de agregado y borrado cambian
+            # para simular un proceso cualquiera en CPU
             if self.status is True:
                 i = random.randint(0, 99)
                 Mem_P1 = self.memory
+                # Muestra la cantidad de bloques que está usando y lo que hace con el
                 if self.console is True: print("Proceso 1 (Tamaño: " + str(len(self.memory))+ ") "+": Trabajando...", end='\r')
                 time.sleep(1.5)
 
+                # Cambiando probabilidades de Proceso 1 dependiendo de los bloques de memoria que tenga
                 if len(self.memory) == 5:
                     self.probability = 80
                 elif len(self.memory) == 17:
@@ -156,6 +168,7 @@ class Process1(CPU):
                     Mem_P1 = self.memory
 
                     if not self.memory:
+                        # Solicita mas memoria directamente al CPU en caso de que el CPU no tenga, el proceso termina
                         if self.console is True: print("Proceso 1 sin memoria, solicitando memoria a CPU", end='\r')
                         time.sleep(1.5)
                         if CPU.assign(self, self.memory) is False:
@@ -169,6 +182,7 @@ class Process1(CPU):
                             if self.console is True: print("Memoria extra asiganada a Proceso 1 ", end='\r')
                             time.sleep(1.5)
                 else:
+                    # Cuando el proceso termina regresa todos los bloques que ocupo al CPU
                     if len(self.memory) == 20:
                         print("\nProceso 1: TERMINANDO", end='\r')
                         for block in Mem_P1:
@@ -179,6 +193,7 @@ class Process1(CPU):
                         self.memory.append(0)
                         Mem_P1 = self.memory
             else:
+                # El proceso puede terminar por dos razones, se termia la memoria o termino de forma normal
                 if self.insufficient_memory is True:
                     if self.console is True: print("Proceso 1: TERMINADO: Memoria insuficiente en CPU", end='\r')
                     time.sleep(1.5)
@@ -200,9 +215,6 @@ class Process2(CPU):
         self.console = False
         super(Process2, self).__init__()
 
-    def initialize_p2(self):
-        print("Este es el proceso 2")
-
     def console_stat(self):
         if self.console is True:
             self.console = False
@@ -223,10 +235,11 @@ class Process2(CPU):
                 if self.console is True: print("Proceso 2 (Tamaño: " + str(len(self.memory))+ ") "+": Trabajando...", end='\r')
                 time.sleep(1.5)
 
+                # Probabilidades del Proceso 2 dependiendo de los bloques que tenga
                 if len(self.memory) == 2:
                     self.probability = 90
                 elif len(self.memory) == 13:
-                    self.probability = 25
+                    self.probability = 20
 
                 if (i > self.probability):
                     if self.console is True: print("Proceso 2 (Tamaño: " + str(len(self.memory))+ ") "+": Eliminando...", end ='\r')
@@ -278,9 +291,6 @@ class Process3(CPU):
         self.console = False
         super(Process3, self).__init__()
 
-    def initialize_p3(self):
-        print("Este es el proceso 3")
-
     def console_stat(self):
         if self.console is True:
             self.console = False
@@ -295,12 +305,14 @@ class Process3(CPU):
         Mem_Max_P3 = self.max_size
 
         while True:
+
             if self.status is True:
                 i = random.randint(0, 99)
                 Mem_P3 = self.memory
                 if self.console is True: print("Proceso 3 (Tamaño: " + str(len(self.memory))+ ") " +": Trabajando...", end='\r')
                 time.sleep(1.5)
 
+                # Cambiando probabilidades de Proceso 1 dependiendo de los bloques de memoria que tenga
                 if len(self.memory) == 1:
                     self.probability = 90
                 if len(self.memory) == 4:
@@ -351,7 +363,7 @@ global CPU_memory
 p1 = Process1()
 p2 = Process2()
 p3 = Process3()
-#p4 = Process3()
+
 cpu = CPU()
 
 # Chequeo inicial de estados
@@ -362,19 +374,20 @@ print("\t\t\t\tMemoria de CPU: " + str(len(cpu.memory)))
 print("\t\t\t\tMemoria de Proceso 1: " +str(len(p1.memory)))
 print("\t\t\t\tMemoria de Proceso 2: " +str(len(p2.memory)))
 print("\t\t\t\tMemoria de Proceso 3: " +str(len(p3.memory)))
-#print("\t\t\t\tMemoria de Proceso 4: " +str(len(p4.memory)))
 print("\n")
 
+#Hilos de los procesos, su función target es la que lleva acabo el uso de la memoria que se les asigno
 p1t = threading.Thread(target=p1.tasks, args=())
-p2t = threading.Thread(target=p2.tasks, args=()) # Thread de Process 1
+p2t = threading.Thread(target=p2.tasks, args=())
 p3t = threading.Thread(target=p3.tasks, args=())
-#p4t = threading.Thread(target=p4.tasks(), args=())
 cput = threading.Thread(target=cpu.percentages, args=())
+
 p1t.start()
 p2t.start()
 p3t.start()
-#p4t.start()
 cput.start()
+
+#Creando los objetos de Boton y ventando
 char = tk.PhotoImage(file="char.gif")
 fondo = tk.Label (gui,image=char).place(x=100,y=10)
 
@@ -388,6 +401,7 @@ buttonPROCESSP1 = tk.Button(gui, text="Memoria en Proceso 1 [OFF]",command = cpu
 buttonPROCESSP2 = tk.Button(gui, text="Memoria en Proceso 2 [OFF]",command = cpu.console_stat_mem2)
 buttonPROCESSP3 = tk.Button(gui, text="Memoria en Proceso 3 [OFF]",command = cpu.console_stat_mem3)
 
+#Se define la posicion de los botones y el tamaño de la GUI
 buttonPROCESSCPU.place(x=400,y=70)
 buttonPROCESS1.place(x=50,y=50)
 buttonPROCESS2.place(x=50,y=80)
@@ -396,16 +410,6 @@ buttonPROCESS3.place(x=50,y=110)
 buttonPROCESSP1.place(x=400,y=100)
 buttonPROCESSP2.place(x=400,y=130)
 buttonPROCESSP3.place(x=400,y=160)
-
-
-#buttonPROCESSCPU.pack()
-#buttonPROCESS1.pack()
-#buttonPROCESS2.pack()
-#buttonPROCESS3.pack()
-
-#buttonPROCESSP1.pack()
-#buttonPROCESSP2.pack()
-#buttonPROCESSP3.pack()
 
 gui.geometry("600x250")#dimensiones ancho x alto
 gui.title("Memory Management Unit")
