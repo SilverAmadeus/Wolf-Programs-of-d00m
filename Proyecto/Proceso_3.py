@@ -16,7 +16,7 @@ class Process3(object):
         self.max_size = len(self.memory)
         while self.status is True:
             i = random.randint(0, 99)
-            print("\nProceso 3 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...",  end='\r')
+            print("\nProceso 3 (Tamaño: " + str(len(self.memory))+ ") " +str(i)+": Trabajando...")
             time.sleep(2)
             if len(self.memory) == 1:
                 self.probability = 98
@@ -24,16 +24,16 @@ class Process3(object):
                 self.probability = 15
 
             if (i > self.probability):
-                print("\nProceso 3: Eliminando...", end='\r')
+                print("\nProceso 3: Eliminando...")
                 time.sleep(2)
                 self.memory.pop()
-                print("\nProceso 3: Tamaño de bloque ", len(self.memory), end='\r')
+                print("\nProceso 3: Tamaño de bloque ", len(self.memory))
                 if not self.memory:
-                    print("\nProceso 3 sin memoria", end='\r')
+                    print("\nProceso 3 sin memoria")
                     self.status = False
             else:
                 if len(self.memory) == 5:
-                    print("\nProceso 3: Memoria maxima",  end='\r')
+                    print("\nProceso 3: Memoria maxima")
                 else:
                     self.memory.append(0)
 
