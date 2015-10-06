@@ -5,10 +5,17 @@
     <list default="true" id="140a468a-98df-4a69-925f-817bcc2cd511" name="Default" comment="" />
 =======
     <list default="true" id="140a468a-98df-4a69-925f-817bcc2cd511" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU.py" afterPath="$PROJECT_DIR$/CPU.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_1.py" afterPath="$PROJECT_DIR$/Proceso_1.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_2.py" afterPath="$PROJECT_DIR$/Proceso_2.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Proceso_3.py" afterPath="$PROJECT_DIR$/Proceso_3.py" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/char.gif" afterPath="$PROJECT_DIR$/char.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPU.py" afterPath="$PROJECT_DIR$/CPU.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> origin/master
     </list>
 >>>>>>> origin/master
     <ignored path="Proyecto.iws" />
@@ -32,6 +39,7 @@
     <leaf>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file leaf-file-name="Example1.py" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/PycharmProjects/Examples_Tkinter/Example1.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,6 +54,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="9.893617">
               <caret line="186" column="43" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
+=======
+      <file leaf-file-name="CPU.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CPU.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4701087">
+              <caret line="355" column="69" selection-start-line="355" selection-start-column="69" selection-end-line="355" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gui_MMU.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../gui_MMU.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -67,7 +92,11 @@
         <entry file="file://$PROJECT_DIR$/Proceso_1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+=======
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -88,7 +117,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
 <<<<<<< HEAD
+<<<<<<< HEAD
               <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+>>>>>>> origin/master
+=======
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
 >>>>>>> origin/master
 =======
               <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
@@ -115,8 +148,14 @@
       <list>
         <option value="$PROJECT_DIR$/Proceso_2.py" />
         <option value="$PROJECT_DIR$/Proceso_3.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Proceso_1.py" />
         <option value="$PROJECT_DIR$/../GUI_Project.py" />
+=======
+        <option value="$PROJECT_DIR$/../GUI_Project.py" />
+        <option value="$PROJECT_DIR$/Proceso_1.py" />
+        <option value="$PROJECT_DIR$/../gui_MMU.py" />
+>>>>>>> origin/master
         <option value="$PROJECT_DIR$/CPU.py" />
       </list>
     </option>
@@ -169,9 +208,13 @@
   </component>
   <component name="PropertiesComponent">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/Examples_Tkinter" />
 =======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../GUI_Project.py" />
+>>>>>>> origin/master
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../gui_MMU.py" />
 >>>>>>> origin/master
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
@@ -228,6 +271,26 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
+=======
+    <configuration default="false" name="gui_MMU" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Proyecto" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../gui_MMU.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+>>>>>>> origin/master
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -350,6 +413,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
+<<<<<<< HEAD
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
       <item index="1" class="java.lang.String" itemvalue="Python.Proceso_1" />
@@ -360,6 +424,20 @@
         <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
         <item index="1" class="java.lang.String" itemvalue="Python.GUI_Project" />
         <item index="2" class="java.lang.String" itemvalue="Python.Proceso_1" />
+=======
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Proceso_1" />
+      <item index="2" class="java.lang.String" itemvalue="Python.GUI_Project" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui_MMU" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.CPU" />
+        <item index="1" class="java.lang.String" itemvalue="Python.gui_MMU" />
+        <item index="2" class="java.lang.String" itemvalue="Python.Proceso_1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.GUI_Project" />
+>>>>>>> origin/master
       </list>
     </recent_temporary>
   </component>
@@ -377,16 +455,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+=======
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
 <<<<<<< HEAD
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -399,6 +485,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
+=======
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977098" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39726028" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
 >>>>>>> origin/master
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -431,6 +527,7 @@
   <component name="editorHistoryManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Desktop/CPU.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -447,6 +544,54 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
 >>>>>>> origin/master
+=======
+    <entry file="file://$PROJECT_DIR$/CPU.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../gui_MMU.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GUI_Project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#20#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proceso_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proceso_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proceso_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
@@ -455,19 +600,31 @@
     <entry file="file://$USER_HOME$/Desktop/Proceso_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+=======
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Desktop/CPU.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/Proceso_3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$USER_HOME$/Desktop/Proceso_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -549,6 +706,19 @@
           <folding />
 =======
         <state vertical-scroll-proportion="0.0">
+=======
+    <entry file="file://$PROJECT_DIR$/Proceso_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../GUI_Project.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+>>>>>>> origin/master
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#20#90#0" expanded="true" />
@@ -557,18 +727,30 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Proceso_3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+=======
+    <entry file="file://$PROJECT_DIR$/../gui_MMU.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPU.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="9.893617">
           <caret line="186" column="43" selection-start-line="186" selection-start-column="43" selection-end-line="186" selection-end-column="43" />
+=======
+        <state vertical-scroll-proportion="0.4701087">
+          <caret line="355" column="69" selection-start-line="355" selection-start-column="69" selection-end-line="355" selection-end-column="69" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
