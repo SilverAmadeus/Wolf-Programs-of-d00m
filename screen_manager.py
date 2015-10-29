@@ -49,7 +49,7 @@ Builder.load_string("""
             BoxLayout:
                 Button:
                     size_hint: 1, .2
-                    text: 'Nuevo boton'
+                    text: 'Graficar SWAP Memory'
                     on_release: root.graficar()
                 TextInput:
                     id: iface_name
@@ -64,14 +64,40 @@ Builder.load_string("""
 
 <SettingsScreen>:
     BoxLayout:
-        BoxLayout:
-            size_hint: 1, 1
-            AsyncImage:
-                source: '/Users/Ivan/Documents/5th_Semester/OS/Wolf-Programs-of-d00m/swap_memory.png'
+        id: graph_scren
+        orientation: 'vertical'
+        size_hint: 1, 1
+        AsyncImage:
+            source: '/Users/Ivan/Documents/5th_Semester/OS/Wolf-Programs-of-d00m/swap_memory.png'
         Button:
             text: 'Back to Memory menu'
             size_hint: 1, .15
             on_press: root.manager.current = 'menu'
+        Button:
+            text: 'Ir a pantalla de PIDS'
+            size_hint: 1, .15
+            on_press: root.manager.current = 'pid_s'
+
+<PidScreen>:
+    BoxLayout:
+        id: pid_screen
+        orientation: 'vertical'
+        size_hint: 1, 1
+        Label:
+            text: 'OMG'
+        Button:
+            text: 'Back to Memory menu'
+            size_hint: 1, .15
+            on_press: root.manager.current = 'menu'
+            
+    ScrollView:
+        size_hint: 0.5, 1
+        do_scroll_x: False
+        BoxLayout:
+            orientation: 'vertical'
+            id: nodes
+            size_hint: 1, None
+
 """)
 
 # Creamos las pantallas que vamos a usar en la app
@@ -85,8 +111,6 @@ class MainScreen(Screen):
         self.main_box = self.ids['main_box']
         self.secondary_box = self.ids['secondary_box']
         self.secondary_box_lbl = self.ids['secondary_box_lbl']
-        self.pids = psutil.pids()
-        self.str1 = ' '.join(str(e) for e in self.pids)
 
         self.total_swap = psutil.swap_memory().total/1048576
         self.percent_swap = psutil.swap_memory().percent
@@ -110,9 +134,6 @@ class MainScreen(Screen):
         mem = psutil.virtual_memory()
         print mem
 
-
-
-
         self.main_lbl.text = ('[color=00ff00][i][b]System Memory Status[/b][/i]' + '\n\n' + 'Total Memory: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.total_mem) +' Mb'+ '\n\n' + 'Percent: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.percent_mem) +'%'+ '\n\n' + 'Active: '
@@ -130,11 +151,11 @@ class MainScreen(Screen):
         )
 
     def graficar(self):
-        totalswapMeans = [numpy.array(self.total_swap), 0, 0]
-        sinswapMeans = [0, numpy.array(self.sin_swap), 0]
-        soutswapMeans = [0, numpy.array(self.sout_swap), 0] 
-        usedswapMeans = [0, 0, numpy.array(self.used_swap)]
-        freeswapMeans = [0, 0, numpy.array(self.free_swap)]
+        totalswapMeans  = [numpy.array(self.total_swap), 0, 0]
+        sinswapMeans    = [0, numpy.array(self.sin_swap), 0]
+        soutswapMeans   = [0, numpy.array(self.sout_swap), 0] 
+        usedswapMeans   = [0, 0, numpy.array(self.used_swap)]
+        freeswapMeans   = [0, 0, numpy.array(self.free_swap)]
 
         ind = numpy.arange(3)
         width = .5
@@ -165,10 +186,17 @@ class MainScreen(Screen):
 class SettingsScreen(Screen):
     pass
 
+class PidScreen(Screen):
+    def __init__(self, **kwargs):
+        super(PidScreen, self).__init__(**kwargs)
+        self.nodes = self.ids['nodes']
+        pass
+
 # Creamos el manager de las pantallas
 sm = ScreenManager()
 sm.add_widget(MainScreen(name='menu'))
 sm.add_widget(SettingsScreen(name='settings'))
+sm.add_widget(PidScreen(name='pid_s'))
 
 class TestApp(App):
 
