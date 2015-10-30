@@ -6,9 +6,8 @@ from kivy.uix.button import Button
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.screenmanager import ScreenManager, Screen
 
-from subprocess import check_output
-
-import psutil #Debes hacer uso de la linea de comando que te mande por WA para hacer uso de psutil
+import subprocess
+import psutil 
 import sys
 import os
 import numpy
@@ -24,7 +23,7 @@ Builder.load_string("""
         BoxLayout:
             orientation: 'vertical'
             id: main_box
-            size_hint: 0.5, 1
+            size_hint: 0.5, .9
             spacing: 10
             Label:
                 id: main_lbl
@@ -33,7 +32,7 @@ Builder.load_string("""
 
             BoxLayout:
                 Button:
-                    size_hint: 1, 1
+                    size_hint: 1, .8
                     text: 'Run Memory Processses Scan'
                     on_release: root.run_virtual_memory()
         BoxLayout:
@@ -44,17 +43,18 @@ Builder.load_string("""
             Label:
                 id: secondary_box_lbl
                 markup: True
+                text: 'Box'
                 size_hint: 1, 1
 
             BoxLayout:
                 Button:
                     size_hint: 1, .2
                     text: 'Graficar SWAP Memory'
-                    on_release: root.graficar()
-                TextInput:
-                    id: iface_name
+                    on_release: root.graficar_swap_memory()
+                Button:
                     size_hint: 1, .2
-                    multiline: False
+                    text: 'Graficar Virtual Memory'
+                    on_release: root.grafica_virtual_memory()
 
             BoxLayout:
                 Button:
@@ -80,23 +80,30 @@ Builder.load_string("""
 
 <PidScreen>:
     BoxLayout:
-        id: pid_screen
-        orientation: 'vertical'
-        size_hint: 1, 1
-        Label:
-            text: 'OMG'
-        Button:
-            text: 'Back to Memory menu'
-            size_hint: 1, .15
-            on_press: root.manager.current = 'menu'
-            
-    ScrollView:
-        size_hint: 0.5, 1
-        do_scroll_x: False
         BoxLayout:
             orientation: 'vertical'
-            id: nodes
-            size_hint: 1, None
+            id: pid_screen
+            size_hint: 1, 1
+            Label:
+                text: 'OMG'
+            Button:
+                text: 'Back to Memory menu'
+                size_hint: 1, .5
+                on_press: root.manager.current = 'menu'
+            Button:
+                text: 'Mostrar PIDs activos en el sistema'
+                size_hint: 1, .5
+                on_press: root.run_pids()
+        BoxLayout:
+            Label:
+                text: 'Aqui va la info de los pids'
+        ScrollView:
+            size_hint: 0.5, 1
+            do_scroll_x: False
+            BoxLayout:
+                orientation: 'vertical'
+                id: nodes
+                size_hint: (1, None)
 
 """)
 
@@ -106,12 +113,12 @@ class MainScreen(Screen):
     def __init__(self, **kwargs):
         super(MainScreen, self).__init__(**kwargs)
 
-        self.iface_name = self.ids['iface_name']
         self.main_lbl = self.ids['main_lbl']
         self.main_box = self.ids['main_box']
         self.secondary_box = self.ids['secondary_box']
         self.secondary_box_lbl = self.ids['secondary_box_lbl']
 
+        #Lo dividimos entre 1048576 ya que psutil te regresa los valores en bytes, lo pasamos a Mb
         self.total_swap = psutil.swap_memory().total/1048576
         self.percent_swap = psutil.swap_memory().percent
         self.sin_swap = psutil.swap_memory().sin/1048576
@@ -126,6 +133,7 @@ class MainScreen(Screen):
         self.inactive_mem = psutil.virtual_memory().inactive/1048576
         self.used_mem = psutil.virtual_memory().used/1048576
         self.available_mem = psutil.virtual_memory().available/1048576
+        self.free_mem = psutil.virtual_memory().free/1048576
 
 
 
@@ -134,13 +142,14 @@ class MainScreen(Screen):
         mem = psutil.virtual_memory()
         print mem
 
-        self.main_lbl.text = ('[color=00ff00][i][b]System Memory Status[/b][/i]' + '\n\n' + 'Total Memory: '
+        self.main_lbl.text = ('[color=00ff00][i][b]System Memory Status[/b][/i]' + '\n\n' + '[b]Total Virtual Memory: [/b]'
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.total_mem) +' Mb'+ '\n\n' + 'Percent: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.percent_mem) +'%'+ '\n\n' + 'Active: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.active_mem) +' Mb'+ '\n\n' + 'Inactive: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.inactive_mem) +' Mb'+ '\n\n' + 'Used: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.used_mem) +' Mb'+ '\n\n' + 'Available: '
-        + '[color=00ff00][i]{0}[/i][/color]'.format(self.available_mem) +' Mb'+ '\n\n' + 'Total Swap Memory: '
+        + '[color=00ff00][i]{0}[/i][/color]'.format(self.available_mem) +' Mb'+ '\n\n' + 'Free: '
+        + '[color=00ff00][i]{0}[/i][/color]'.format(self.free_swap) +' Mb'+ '\n\n' + '[b]Total Swap Memory: [/b]'
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.total_swap) +' Mb'+ '\n\n' + 'Percent: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.percent_swap) +'%'+ '\n\n' + 'SIN: '
         + '[color=00ff00][i]{0}[/i][/color]'.format(self.sin_swap) +' Mb'+ '\n\n' + 'SOUT: '
@@ -150,7 +159,7 @@ class MainScreen(Screen):
 
         )
 
-    def graficar(self):
+    def graficar_swap_memory(self):
         totalswapMeans  = [numpy.array(self.total_swap), 0, 0]
         sinswapMeans    = [0, numpy.array(self.sin_swap), 0]
         soutswapMeans   = [0, numpy.array(self.sout_swap), 0] 
@@ -174,12 +183,37 @@ class MainScreen(Screen):
         pyplot.savefig('swap_memory.png')
         pyplot.show()
 
+    def grafica_virtual_memory(self):
+        arrTotal = [numpy.array(self.total_mem),0,0,0,0,0]
+        arrAvailable = [0,numpy.array(self.available_mem),0,0,0,0]
+        arrUsed = [0,0,numpy.array(self.used_mem),0,0,0]
+        arrFree = [0,0,0,numpy.array(self.free_mem),0,0]
+        arrActive = [0,0,0,0,numpy.array(self.active_mem),0]
+        arrInactive = [0,0,0,0,0,numpy.array(self.inactive_mem)]
+        
+        rango = numpy.arange(6)
+        width = .5
 
+        d1 = pyplot.bar(rango,arrTotal,width, color = 'c')
+        d2 = pyplot.bar(rango,arrAvailable,width, color = 'm')
+        d3 = pyplot.bar(rango,arrUsed,width, color = 'b')
+        d4 = pyplot.bar(rango,arrFree,width, color = 'g')
+        d5 = pyplot.bar(rango,arrActive,width, color = 'r')
+        d6 = pyplot.bar(rango,arrInactive,width, color = 'b')
 
+        pyplot.ylabel("MB's")
+        pyplot.title("Virtual Memory")
+        pyplot.xticks(rango+width/2,('Total','Available','Used','Free','Active','Inactive'))
+        #pyplot.legend((p1[0],p2[0],p3[0],p4[0],p5[0],p6[0]),('Rss','Vms','Shared','Text','LIb','Data','Dirty'))
+        pyplot.show()
 
-    def run_pids(self):
-        #self.comp = datetime.now().strftime(' %H:%M:%S')
-        self.secondary_box_lbl.text = (self.str1)
+        labels = ['Available','Used']
+        slices = [100*self.available_mem/self.total_mem,100*self.used_mem/self.total_mem]
+        colors = ['blue','red']
+
+        pyplot.pie(slices,labels=labels,colors=colors, explode = (0.05,0),autopct='%1.1f%%')
+        pyplot.title('Virtual Memory')        
+        pyplot.show()
 
 
 
@@ -187,10 +221,40 @@ class SettingsScreen(Screen):
     pass
 
 class PidScreen(Screen):
+    #self.nodes.clear_widgets()
     def __init__(self, **kwargs):
         super(PidScreen, self).__init__(**kwargs)
         self.nodes = self.ids['nodes']
-        pass
+
+    def run_pids(self):
+        self.nodes.clear_widgets()
+        self.lista = []
+        var = subprocess.check_output(['ps','-u',psutil.users()[0].name]) # tercer parametro selecciona el usuario del sistema
+        ren = var.split('\n') #obteniendo reglones
+        cont = 0 #control ignora primera y ultima linea
+        for n in ren:
+            cont = cont + 1
+            if cont == 1:
+                pass
+            elif  cont == len(ren):
+                pass #ultima linea a ignorar         
+            else:
+                process = n.split()
+                if sys.platform.startswith("linux"):
+                    selected = 0
+                elif sys.platform.startswith("darwin"): #OSX
+                    selected = 1
+                else:
+                    print "NOT SUPPORTED" #EXCEPTION?
+                self.lista.append(int(process[selected]))
+
+
+        #Vamos a introducir cada uno de los PIDs que se puedan usar en la lista de scroll .:D
+        for p in self.lista:
+            self.nodes.add_widget(Button(text='[color=00ff00]PID: {0}[/color]'.format(p), markup= True, font_size = '15sp', 
+                height='200sp'))
+
+        self.nodes.size = (200, 40000)
 
 # Creamos el manager de las pantallas
 sm = ScreenManager()
