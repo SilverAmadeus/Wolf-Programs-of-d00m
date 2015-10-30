@@ -171,9 +171,11 @@ class MainScreen(Screen):
 
         b1 = pyplot.bar(ind, totalswapMeans, width, color = 'red')
         b2 = pyplot.bar(ind, sinswapMeans, width, color = 'blue')
-        b3 = pyplot.bar(ind, soutswapMeans, width, color = 'green', bottom = sinswapMeans)
-        b4 = pyplot.bar(ind, usedswapMeans, width, color = 'gold')
-        b5 = pyplot.bar(ind, freeswapMeans, width, color = 'yellow', bottom = usedswapMeans)
+        b3 = pyplot.bar(ind, soutswapMeans, width, color = 'green')
+        b4 = pyplot.bar(ind,sinswapMeans,width,color = 'cyan')
+        b5 = pyplot.bar(ind, usedswapMeans, width, color = 'gold')
+        b6 = pyplot.bar(ind, freeswapMeans, width, color = 'yellow')
+        b7 = pyplot.bar(ind,usedswapMeans,width,color = 'magenta')
 
         pyplot.ylabel('Megabytes')
         pyplot.title('Graph SWAP Memory')
@@ -193,7 +195,7 @@ class MainScreen(Screen):
         
         rango = numpy.arange(6)
         width = .5
-
+        ##CHECAR CUALES ESTAN DISPONIBLES EN OSX
         d1 = pyplot.bar(rango,arrTotal,width, color = 'c')
         d2 = pyplot.bar(rango,arrAvailable,width, color = 'm')
         d3 = pyplot.bar(rango,arrUsed,width, color = 'b')
@@ -205,14 +207,16 @@ class MainScreen(Screen):
         pyplot.title("Virtual Memory")
         pyplot.xticks(rango+width/2,('Total','Available','Used','Free','Active','Inactive'))
         #pyplot.legend((p1[0],p2[0],p3[0],p4[0],p5[0],p6[0]),('Rss','Vms','Shared','Text','LIb','Data','Dirty'))
+        pyplot.savefig('virtual_memory.png')
         pyplot.show()
 
         labels = ['Available','Used']
-        slices = [100*self.available_mem/self.total_mem,100*self.used_mem/self.total_mem]
+        slices = [float(100*self.available_mem/self.total_mem),float(100*self.used_mem/self.total_mem)]
         colors = ['blue','red']
 
         pyplot.pie(slices,labels=labels,colors=colors, explode = (0.05,0),autopct='%1.1f%%')
         pyplot.title('Virtual Memory')        
+        pyplot.savefig('virtual_average.png')
         pyplot.show()
 
 
